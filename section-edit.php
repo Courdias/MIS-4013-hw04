@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
   </div>
   <div class="mb-3">
   <label for="instructorList" class="form-label">Instructor</label>
-<select class="form-select" aria-label="Select instructor" id="instructorList" name="iid">
+<select class="form-select" aria-label="Select Instructor" id="instructorList" name="iid">
 <?php
     $instructorSql = "select * from Instructor order by instructor_name";
     $instructorResult = $conn->query($instructorSql);
