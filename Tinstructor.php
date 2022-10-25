@@ -1,6 +1,7 @@
 <?php
   include "header.php";
-?>*
+?>
+<?php
 $servername = "localhost";
 $username = "buidemac_homework3";
 $password = "homework3user";
