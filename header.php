@@ -19,7 +19,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Tinstructors.php">Instructors</a>
+          <a class="nav-link active" aria-current="page" href="Tinstructor.php">Instructors</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Tcourse.php">Courses</a>
@@ -29,9 +29,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Tstudents.php">Students</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
