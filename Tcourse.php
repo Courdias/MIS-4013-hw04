@@ -60,41 +60,7 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["course_id"]?></td>
-                <td>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editcourse<?=$row["course_id"]?>">
-                Edit
-              </button>
-              <div class="modal fade" id="editcourse<?=$row["ccourse_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editcourse<?=$row["instructor_id"]?>Label" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editcourse<?=$row["course_id"]?>Label">Edit Course</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form method="post" action="">
-                        <div class="mb-3">
-                          <label for="editcoruse<?=$row["course_id"]?>Name" class="form-label">Course ID</label>
-                          <input type="text" class="form-control" id="editcourse<?=$row["course_id"]?>Course ID" aria-describedby="editcourse<?=$row["course_id"]?>Help" name="iName" value="<?=$row['course_id']?>">
-                          <div id="editInstructor<?=$row["instructor_id"]?>Help" class="form-text">Enter the instructor's name.</div>
-                        </div>
-                        <input type="hidden" name="iid" value="<?=$row['instructor_id']?>">
-                        <input type="hidden" name="saveType" value="Edit">
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <form method="post" action="">
-                <input type="hidden" name="iid" value="<?=$row["instructor_id"]?>" />
-                <input type="hidden" name="saveType" value="Delete">
-                <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
-              </form>
-            </td>
-          </tr>
+           
     
     
     <td><?=$row["prefix"]?></td>
