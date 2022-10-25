@@ -19,6 +19,18 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Tinstructors.php">Instructors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Tcourse.php">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Tsection.php">Sections</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Tstudents.php">Students</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item dropdown">
@@ -45,8 +57,6 @@
 </nav>
     <div class="card">
   <div class="card-body">
-    Welcome to Nghia's MIS 4013 HW 3.
+    Welcome to Nghia's MIS 4013 HW.
   </div>
 </div>
-    <h1>This is a consistent header.</h1>
-   
