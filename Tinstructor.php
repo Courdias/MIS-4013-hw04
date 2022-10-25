@@ -1,16 +1,6 @@
 <?php
   include "header.php";
-?>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
+?>*
 $servername = "localhost";
 $username = "buidemac_homework3";
 $password = "homework3user";
