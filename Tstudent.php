@@ -1,16 +1,6 @@
 <?php
   include "header.php";
 ?>
-    <h1>Students</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Student ID</th>
-      <th>Student Name</th>
-
-    </tr>
-  </thead>
-  <tbody>
     <?php
 $servername = "localhost";
 $username = "buidemac_homework3";
