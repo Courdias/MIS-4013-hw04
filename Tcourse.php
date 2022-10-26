@@ -139,9 +139,11 @@ $conn->close();
                   <label for="prefix" class="form-label">Course Prefix</label>
                   <input type="text" class="form-control" id="cpf" aria-describedby="courseHelp" name="cpf">
                   <div id="courseHelp" class="form-text">Enter the course prefix.</div>
+                  
                    <label for="number" class="form-label">Course Number</label>
-                   <input type="text" class="form-control" id="pid" aria-describedby="nameHelp" name="cnb">
+                   <input type="text" class="form-control" id="cnb" aria-describedby="nameHelp" name="cnb">
                    <div id="nameHelp" class="form-text">Enter the course number.</div>
+                  
                           <label for="description" class="form-label">Course Description</label>
                           <input type="text" class="form-control" id="cdscr" aria-describedby="courseHelp" name="cdscr">
                           <div id="nameHelp" class="form-text">Enter the course description.</div>
