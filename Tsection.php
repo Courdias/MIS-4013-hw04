@@ -67,22 +67,22 @@ if ($result->num_rows > 0) {
     <td><?=$row["section_number"]?></td>
     <td><?=$row["instructor_name"]?></td>
     <td>
-      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editsection<?=$row["section_number"]?>">
+      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editsection<?=$row["section_id"]?>">
                 Edit
               </button>
-              <div class="modal fade" id="editInstructor<?=$row["instructor_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editInstructor<?=$row["instructor_id"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="editsection<?=$row["section_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editsection<?=$row["section_id"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editInstructor<?=$row["instructor_id"]?>Label">Edit Instructor</h1>
+                      <h1 class="modal-title fs-5" id="editsection<?=$row["section_id"]?>Label">Edit Section Number</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editInstructor<?=$row["instructor_id"]?>Name" class="form-label">Section ID</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["instructor_id"]?>Name" aria-describedby="editInstructor<?=$row["instructor_id"]?>Help" name="iName" value="<?=$row['instructor_name']?>">
-                          <div id="editInstructor<?=$row["instructor_id"]?>Help" class="form-text">Enter the Section's ID.</div>
+                          <label for="editsection<?=$row["instructor_id"]?>Name" class="form-label">Section ID</label>
+                          <input type="text" class="form-control" id="editsection<?=$row["instructor_id"]?>Number" aria-describedby="editsection<?=$row["section_id"]?>Help" name="SNumber" value="<?=$row['section_number']?>">
+                          <div id="editsection<?=$row["instructor_id"]?>Help" class="form-text">Enter the Section's Number.</div>
                         </div>
                         <input type="hidden" name="sid" value="<?=$row['section_id']?>">
                         <input type="hidden" name="saveType" value="Edit">
