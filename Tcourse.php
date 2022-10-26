@@ -79,12 +79,14 @@ if ($result->num_rows > 0) {
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editCourse<?=$row["course_id"]?>Name" class="form-label">Course Prefix</label>
-                          <input type="text" class="form-control" id="editCourse<?=$row["course_id"]?>Name" aria-describedby="editCourse<?=$row["course_id"]?>Help" name="cpf" value="<?=$row['prefix']?>">
+                          <label for="editCourse<?=$row["course_id"]?>Name" class="form-label">Course Prefix</label>                          
+                          <input type="text" class="form-control" id="editCourse<?=$row["course_id"]?>cpf" aria-describedby="editCourse<?=$row["course_id"]?>Help" name="cpf" value="<?=$row['prefix']?>">
                           <div id="editCourse<?=$row["course_id"]?>Help" class="form-text">Enter the course prefix.</div>
+                          
                           <label for="number" class="form-label">Course Number</label>
                           <input type="text" class="form-control" id="pid" aria-describedby="courseHelp" name="cnb" value="<?=$row['number']?>">
                           <div id="nameHelp" class="form-text">Enter the course number</div>
+                          
                           <label for="description" class="form-label">Course Description</label>
                           <input type="text" class="form-control" id="did" aria-describedby="courseHelp" name="cdscr" value="<?=$row['description']?>">
                           <div id="nameHelp" class="form-text">Enter the course description.</div>
