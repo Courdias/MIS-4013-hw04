@@ -42,19 +42,19 @@ if ($result->num_rows > 0) {
        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editcourse<?=$row["course_id"]?>">
                 Edit
               </button>
-              <div class="modal fade" id="editcourse<?=$row["course_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editInstructor<?=$row["instructor_id"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="editcourse<?=$row["course_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editcourse<?=$row["course_id"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editInstructor<?=$row["instructor_id"]?>Label">Edit Instructor</h1>
+                      <h1 class="modal-title fs-5" id="editcourse<?=$row["course_id"]?>Label">Edit Course</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editInstructor<?=$row["instructor_id"]?>Name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["instructor_id"]?>Name" aria-describedby="editInstructor<?=$row["instructor_id"]?>Help" name="iName" value="<?=$row['instructor_name']?>">
-                          <div id="editInstructor<?=$row["instructor_id"]?>Help" class="form-text">Enter the instructor's name.</div>
+                          <label for="editcoruse<?=$row["course_id"]?>Prefix" class="form-label">Prefix</label>
+                          <input type="text" class="form-control" id="editcourse<?=$row["course_id"]?>Prefix" aria-describedby="editcourse<?=$row["course_id"]?>Help" name="cName" value="<?=$row['course_name']?>">
+                          <div id="editcourse<?=$row["course_id"]?>Help" class="form-text">Enter the course's prefix.</div>
                           
                           
                           
