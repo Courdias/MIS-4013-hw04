@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
                       <form method="post" action="">
                         <div class="mb-3">
                           <label for="editcoruse<?=$row["course_id"]?>Prefix" class="form-label">Prefix</label>
-                          <input type="text" class="form-control" id="editcourse<?=$row["course_id"]?>Prefix" aria-describedby="editcourse<?=$row["course_id"]?>Help" name="cName" value="<?=$row['course_name']?>">
+                          <input type="text" class="form-control" id="editcourse<?=$row["course_id"]?>Prefix" aria-describedby="editcourse<?=$row["course_id"]?>Help" name="cPrefix" value="<?=$row['course_name']?>">
                           <div id="editcourse<?=$row["course_id"]?>Help" class="form-text">Enter the course's prefix.</div>
                           
                           
