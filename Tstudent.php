@@ -1,15 +1,7 @@
 <?php
   include "header.php";
 ?>
-        <h1>Students</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Student ID</th>
-      <th>Student Name</th>
-
-    </tr>
-    <?php
+<?php
 $servername = "localhost";
 $username = "buidemac_homework3";
 $password = "homework3user";
@@ -21,15 +13,47 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "select student_id, student_name from student";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  switch ($_POST['saveType']) {
+    case 'Add':
+      $sqlAdd = "insert into Instructor (instructor_name) value (?)";
+      $stmtAdd = $conn->prepare($sqlAdd);
+      $stmtAdd->bind_param("s", $_POST['iName']);
+      $stmtAdd->execute();
+      echo '<div class="alert alert-success" role="alert">New instructor added.</div>';
+      break;
+    case 'Edit':
+      $sqlEdit = "update Instructor set instructor_name=? where instructor_id=?";
+      $stmtEdit = $conn->prepare($sqlEdit);
+      $stmtEdit->bind_param("si", $_POST['iName'], $_POST['iid']);
+      $stmtEdit->execute();
+      echo '<div class="alert alert-success" role="alert">Instructor edited.</div>';
+      break;
+    case 'Delete':
+      $sqlDelete = "delete from Instructor where instructor_id=?";
+      $stmtDelete = $conn->prepare($sqlDelete);
+      $stmtDelete->bind_param("i", $_POST['iid']);
+      $stmtDelete->execute();
+      echo '<div class="alert alert-success" role="alert">Instructor deleted.</div>';
+      break;
+  }
+}
+?>
+        <h1>Students</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Student Name</th>
+    </tr>
+  </thead>
+  $sql = "select student_id, student_name from student";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 ?>
-
   </thead>
   <tbody>
   <tr>
