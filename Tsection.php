@@ -70,18 +70,18 @@ if ($result->num_rows > 0) {
               <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCustomer1">
                 Edit
               </button>
-              <div class="modal fade" id="editCustomer1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editCustomer1Label" aria-hidden="true">
+              <div class="modal fade" id="editSection<?=$row["section_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editSection<?=$row["section_id"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editCustomer1Label">Edit Customer</h1>
+                      <h1 class="modal-title fs-5" id="editSection<?=$row["section_id"]?>Label">Edit Prefix</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editCustomer1Name" class="form-label">Customer Name</label>
-                          <input type="text" class="form-control" id="editCustomer1Name" aria-describedby="editCustomer1Help" name="cName" value="Tony Romo">
+                          <label for="editSection<?=$row["instructor_id"]?>Prefix" class="form-label">Prefix</label>
+                          <input type="text" class="form-control" id="editSection<?=$row["section_id"]?>Name" aria-describedby="editSection<?=$row["section_id"]?>Help" name="sName" value="<?=$row['prefix']?>">
                           <div id="editCustomer1Help" class="form-text">Enter the Customer's name.</div>
                           <label for="EmployeeID" class="form-label">Employee ID</label>
                           <input type="text" class="form-control" id="sid" aria-describedby="nameHelp" name="eid" value="1">
