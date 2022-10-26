@@ -39,33 +39,27 @@ if ($result->num_rows > 0) {
     <td><?=$row["number"]?></td>
     <td><?=$row["description"]?></td>
     <td>
-       <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCustomer1">
+       <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editcourse<?=$row["course_id"]?>">
                 Edit
               </button>
-              <div class="modal fade" id="editCustomer1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editCustomer1Label" aria-hidden="true">
+              <div class="modal fade" id="editInstructor<?=$row["instructor_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editInstructor<?=$row["instructor_id"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editCustomer1Label">Edit Course</h1>
+                      <h1 class="modal-title fs-5" id="editInstructor<?=$row["instructor_id"]?>Label">Edit Instructor</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editCustomer1Name" class="form-label">Course Prefix</label>
-                          <input type="text" class="form-control" id="editCustomer1Name" aria-describedby="editCustomer1Help" name="cName" value="MIS">
-                          <div id="editCustomer1Help" class="form-text">Enter the Customer's name.</div>
-                          <label for="EmployeeID" class="form-label">Course Number</label>
-                          <input type="text" class="form-control" id="sid" aria-describedby="nameHelp" name="eid" value="4013">
-                          <div id="nameHelp" class="form-text">Enter the Employee's ID</div>
-                          <label for="ProductName" class="form-label">Product Name</label>
-                          <input type="text" class="form-control" id="pName" aria-describedby="nameHelp" name="pName" value="Football">
-                          <div id="nameHelp" class="form-text">Enter the Product Name</div>
-                          <label for="ProductCost" class="form-label">Product Cost</label>
-                          <input type="text" class="form-control" id="pCost" aria-describedby="nameHelp" name="pCost" value="19.99">
-                          <div id="nameHelp" class="form-text">Enter the Product's cost</div>
+                          <label for="editInstructor<?=$row["instructor_id"]?>Name" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="editInstructor<?=$row["instructor_id"]?>Name" aria-describedby="editInstructor<?=$row["instructor_id"]?>Help" name="iName" value="<?=$row['instructor_name']?>">
+                          <div id="editInstructor<?=$row["instructor_id"]?>Help" class="form-text">Enter the instructor's name.</div>
+                          
+                          
+                          
                         </div>
-                        <input type="hidden" name="cid" value="1">
+                        <input type="hidden" name="iid" value="<?=$row['instructor_id']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
@@ -76,7 +70,7 @@ if ($result->num_rows > 0) {
             </td>
             <td>
               <form method="post" action="">
-                <input type="hidden" name="cid" value="1" />
+                <input type="hidden" name="iid" value="<?=$row["instructor_id"]?>" />
                 <input type="hidden" name="saveType" value="Delete">
                 <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
               </form>
