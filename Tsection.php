@@ -39,48 +39,13 @@ if ($result->num_rows > 0) {
     <td><?=$row["number"]?></td>
     <td><?=$row["section_number"]?></td>
     <td><?=$row["instructor_name"]?></td>
-    <td>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editSection<?=$row["section_id"]?>">
-                Edit
-              </button>
-              <div class="modal fade" id="editSection<?=$row["section_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editSection<?=$row["section_id"]?>Label" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editSection<?=$row["section_id"]?>Label">Edit Prefix</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form method="post" action="">
-                        <div class="mb-3">
-                          
-                          <label for="editSection<?=$row["section_id"]?>Prefix" class="form-label">Prefix</label>
-                          <input type="text" class="form-control" id="editSection<?=$row["section_id"]?>Name" aria-describedby="editSection<?=$row["section_id"]?>Help" name="sName" value="<?=$row['prefix']?>">
-                          <div id="editSection<?=$row["section_id"]?>Help" class="form-text">Enter the Course's Prefix.</div>
-                          
-
-                          <label for="editSection<?=$row["instructor_id"]?>Name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["instructor_id"]?>Name" aria-describedby="editInstructor<?=$row["instructor_id"]?>Help" name="iName" value="<?=$row['instructor_name']?>">
-                          <div id="editSection<?=$row["instructor_id"]?>Help" class="form-text">Enter the instructor's name.</div>
-                          
-                        </div>
-                        <input type="hidden" name="sid" value="1">
-                        <input type="hidden" name="saveType" value="Edit">
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <form method="post" action="">
-                <input type="hidden" name="sid" value="1" />
-                <input type="hidden" name="saveType" value="Delete">
-                <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
-              </form>
-            </td>
-          </tr>
+     <td>
+      <form method="post" action="section-edit.php">
+        <input type="hidden" name="id" value="<?=$row["section_id"]?>">
+        <input type="submit" value="Edit">
+      </form>
+    </td>
+  </tr>
 <?php
   }
 } else {
@@ -88,11 +53,8 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
-          
-        </tbody>
-      </table>
-      <br />
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSection">
-        Add New
-      </button>
+  </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
