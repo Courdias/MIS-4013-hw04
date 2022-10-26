@@ -36,18 +36,18 @@ if ($conn->connect_error) {
       echo '<div class="alert alert-success" role="alert">New instructor added.</div>';
       break;
     case 'Edit':
-      $sqlEdit = "update instructor set instructor_name=? where instructor_id=?";
+      $sqlEdit = "update Section set section_number=? where section_id=?";
       $stmtEdit = $conn->prepare($sqlEdit);
-      $stmtEdit->bind_param("si", $_POST['iName'], $_POST['iid']);
+      $stmtEdit->bind_param("si", $_POST['sNumber'], $_POST['sid']);
       $stmtEdit->execute();
-      echo '<div class="alert alert-success" role="alert">Instructor edited.</div>';
+      echo '<div class="alert alert-success" role="alert">Course Number edited.</div>';
       break;
     case 'Delete':
-      $sqlDelete = "delete from instructor where instructor_id=?";
+      $sqlDelete = "delete from Section where section_id=?";
       $stmtDelete = $conn->prepare($sqlDelete);
-      $stmtDelete->bind_param("i", $_POST['iid']);
+      $stmtDelete->bind_param("i", $_POST['sid']);
       $stmtDelete->execute();
-      echo '<div class="alert alert-success" role="alert">Instructor deleted.</div>';
+      echo '<div class="alert alert-success" role="alert">Course Number deleted.</div>';
       break;
   }
 }
