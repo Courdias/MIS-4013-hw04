@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmtAdd = $conn->prepare($sqlAdd);
       $stmtAdd->bind_param("cici", $_POST['cpf'], $_POST['cnb'], $_POST['cdscr']);
       $stmtAdd->execute();
-      echo '<div class="alert alert-success" role="alert">New course.</div>';
+      echo '<div class="alert alert-success" role="alert">New course added.</div>';
       break;
     case 'Edit':
       $sqlEdit = "update course set prefix=?, number=?, description=?, where course_id=?";
@@ -73,21 +73,21 @@ if ($result->num_rows > 0) {
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editCourse<?=$row["course_id"]?>Label">Edit course</h1>
+                      <h1 class="modal-title fs-5" id="editCourse<?=$row["course_id"]?>Label">Edit Course</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editCourse<?=$row["course_id"]?>Name" class="form-label">Course Name</label>
+                          <label for="editCourse<?=$row["course_id"]?>Name" class="form-label">Course Prefix</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["course_id"]?>Name" aria-describedby="editCourse<?=$row["course_id"]?>Help" name="cpf" value="<?=$row['prefix']?>">
-                          <div id="editCourse<?=$row["course_id"]?>Help" class="form-text">Enter the Course's name.</div>
-                          <label for="number" class="form-label">number</label>
+                          <div id="editCourse<?=$row["course_id"]?>Help" class="form-text">Enter the Course's prefix.</div>
+                          <label for="number" class="form-label">Course Number</label>
                           <input type="text" class="form-control" id="pid" aria-describedby="courseHelp" name="cnb" value="<?=$row['number']?>">
-                          <div id="nameHelp" class="form-text">Enter the number</div>
-                          <label for="description" class="form-label">description</label>
+                          <div id="nameHelp" class="form-text">Enter the course's number</div>
+                          <label for="description" class="form-label">Course Description</label>
                           <input type="text" class="form-control" id="did" aria-describedby="courseHelp" name="cdscr" value="<?=$row['description']?>">
-                          <div id="nameHelp" class="form-text">Enter the description</div>
+                          <div id="nameHelp" class="form-text">Enter the course description.</div>
                         </div>
                         <input type="hidden" name="cid" value="<?=$row['course_id']?>">
                         <input type="hidden" name="saveType" value="Edit">
@@ -136,13 +136,13 @@ $conn->close();
                 <div class="mb-3">
                   <label for="prefix" class="form-label">prefix</label>
                   <input type="text" class="form-control" id="cpf" aria-describedby="courseHelp" name="cpf">
-                  <div id="courseHelp" class="form-text">Enter the Course's name.</div>
+                  <div id="courseHelp" class="form-text">Enter the course prefix.</div>
                    <label for="number" class="form-label">number</label>
                    <input type="text" class="form-control" id="pid" aria-describedby="nameHelp" name="cnb">
-                   <div id="nameHelp" class="form-text">Enter the course number</div>
+                   <div id="nameHelp" class="form-text">Enter the course number.</div>
                           <label for="description" class="form-label">description</label>
                           <input type="text" class="form-control" id="cdscr" aria-describedby="courseHelp" name="cdscr">
-                          <div id="nameHelp" class="form-text">Enter the description</div>
+                          <div id="nameHelp" class="form-text">Enter the course description.</div>
                 </div>
                 <input type="hidden" name="saveType" value="Add">
                 <button type="submit" class="btn btn-primary">Submit</button>
