@@ -118,19 +118,28 @@ $conn->close();
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="addInstructor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addInstructorLabel" aria-hidden="true">
+      <div class="modal fade" id="addCustomer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addCustomerLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addInstructorLabel">Add Instructor</h1>
+              <h1 class="modal-title fs-5" id="addCustomerLabel">Add Customer</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form method="post" action="">
                 <div class="mb-3">
                   <label for="instructorName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="instructorName" aria-describedby="nameHelp" name="iName">
-                  <div id="nameHelp" class="form-text">Enter the instructor's name.</div>
+                  <input type="text" class="form-control" id="cName" aria-describedby="nameHelp" name="cName">
+                  <div id="nameHelp" class="form-text">Enter the Customer's name.</div>
+                   <label for="EmployeeID" class="form-label">Employee ID</label>
+                   <input type="text" class="form-control" id="sid" aria-describedby="nameHelp" name="eid">
+                   <div id="nameHelp" class="form-text">Enter the Employee's ID</div>
+                          <label for="ProductName" class="form-label">Product Name</label>
+                          <input type="text" class="form-control" id="pName" aria-describedby="nameHelp" name="pName">
+                          <div id="nameHelp" class="form-text">Enter the Product Name</div>
+                          <label for="ProductCost" class="form-label">Product Cost</label>
+                          <input type="text" class="form-control" id="pCost" aria-describedby="nameHelp" name="pCost">
+                          <div id="nameHelp" class="form-text">Enter the Product's cost</div>
                 </div>
                 <input type="hidden" name="saveType" value="Add">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -140,6 +149,6 @@ $conn->close();
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>
