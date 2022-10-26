@@ -26,33 +26,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  switch ($_POST['saveType']) {
-    case 'Add':
-      $sqlAdd = "insert into instructor (instructor_name) value (?)";
-      $stmtAdd = $conn->prepare($sqlAdd);
-      $stmtAdd->bind_param("s", $_POST['iName']);
-      $stmtAdd->execute();
-      echo '<div class="alert alert-success" role="alert">New instructor added.</div>';
-      break;
-    case 'Edit':
-      $sqlEdit = "update Section set section_number=? where section_id=?";
-      $stmtEdit = $conn->prepare($sqlEdit);
-      $stmtEdit->bind_param("si", $_POST['sNumber'], $_POST['sid']);
-      $stmtEdit->execute();
-      echo '<div class="alert alert-success" role="alert">Course Number edited.</div>';
-      break;
-    case 'Delete':
-      $sqlDelete = "delete from Section where section_id=?";
-      $stmtDelete = $conn->prepare($sqlDelete);
-      $stmtDelete->bind_param("i", $_POST['sid']);
-      $stmtDelete->execute();
-      echo '<div class="alert alert-success" role="alert">Course Number deleted.</div>';
-      break;
-  }
-}
-    
-    
 $sql = "select section_id, section_number, i.instructor_name, c.prefix, c.number from Section s join Instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id";
 $result = $conn->query($sql);
 
@@ -67,7 +40,7 @@ if ($result->num_rows > 0) {
     <td><?=$row["section_number"]?></td>
     <td><?=$row["instructor_name"]?></td>
     <td>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCustomer1">
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editInstructor<?=$row["instructor_id"]?>">
                 Edit
               </button>
               <div class="modal fade" id="editSection<?=$row["section_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editSection<?=$row["section_id"]?>Label" aria-hidden="true">
