@@ -1,6 +1,14 @@
 <?php
   include "header.php";
 ?>
+        <h1>Students</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Student Name</th>
+
+    </tr>
     <?php
 $servername = "localhost";
 $username = "buidemac_homework3";
@@ -21,14 +29,7 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 ?>
-        <h1>Students</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Student ID</th>
-      <th>Student Name</th>
 
-    </tr>
   </thead>
   <tbody>
   <tr>
