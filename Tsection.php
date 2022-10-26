@@ -80,9 +80,9 @@ if ($result->num_rows > 0) {
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editsection<?=$row["instructor_id"]?>Name" class="form-label">Section ID</label>
-                          <input type="text" class="form-control" id="editsection<?=$row["instructor_id"]?>Number" aria-describedby="editsection<?=$row["section_id"]?>Help" name="SNumber" value="<?=$row['section_number']?>">
-                          <div id="editsection<?=$row["instructor_id"]?>Help" class="form-text">Enter the Section's Number.</div>
+                          <label for="editsection<?=$row["section_id"]?>Number" class="form-label">Section Number</label>
+                          <input type="text" class="form-control" id="editsection<?=$row["section_id"]?>Number" aria-describedby="editsection<?=$row["section_id"]?>Help" name="SNumber" value="<?=$row['section_number']?>">
+                          <div id="editsection<?=$row["section_id"]?>Help" class="form-text">Enter the Section's Number.</div>
                         </div>
                         <input type="hidden" name="sid" value="<?=$row['section_id']?>">
                         <input type="hidden" name="saveType" value="Edit">
