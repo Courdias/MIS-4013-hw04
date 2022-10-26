@@ -67,24 +67,33 @@ if ($result->num_rows > 0) {
     <td><?=$row["section_number"]?></td>
     <td><?=$row["instructor_name"]?></td>
     <td>
-      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editsection<?=$row["section_id"]?>">
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCustomer1">
                 Edit
               </button>
-              <div class="modal fade" id="editsection<?=$row["section_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editsection<?=$row["section_id"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="editCustomer1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editCustomer1Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editsection<?=$row["section_id"]?>Label">Edit Section Number</h1>
+                      <h1 class="modal-title fs-5" id="editCustomer1Label">Edit Customer</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editsection<?=$row["section_id"]?>Number" class="form-label">Section Number</label>
-                          <input type="text" class="form-control" id="editsection<?=$row["section_id"]?>Number" aria-describedby="editsection<?=$row["section_id"]?>Help" name="SNumber" value="<?=$row['section_number']?>">
-                          <div id="editsection<?=$row["section_id"]?>Help" class="form-text">Enter the Section's Number.</div>
+                          <label for="editCustomer1Name" class="form-label">Customer Name</label>
+                          <input type="text" class="form-control" id="editCustomer1Name" aria-describedby="editCustomer1Help" name="cName" value="Tony Romo">
+                          <div id="editCustomer1Help" class="form-text">Enter the Customer's name.</div>
+                          <label for="EmployeeID" class="form-label">Employee ID</label>
+                          <input type="text" class="form-control" id="sid" aria-describedby="nameHelp" name="eid" value="1">
+                          <div id="nameHelp" class="form-text">Enter the Employee's ID</div>
+                          <label for="ProductName" class="form-label">Product Name</label>
+                          <input type="text" class="form-control" id="pName" aria-describedby="nameHelp" name="pName" value="Football">
+                          <div id="nameHelp" class="form-text">Enter the Product Name</div>
+                          <label for="ProductCost" class="form-label">Product Cost</label>
+                          <input type="text" class="form-control" id="pCost" aria-describedby="nameHelp" name="pCost" value="19.99">
+                          <div id="nameHelp" class="form-text">Enter the Product's cost</div>
                         </div>
-                        <input type="hidden" name="sid" value="<?=$row['section_id']?>">
+                        <input type="hidden" name="cid" value="1">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
@@ -95,12 +104,12 @@ if ($result->num_rows > 0) {
             </td>
             <td>
               <form method="post" action="">
-                <input type="hidden" name="sid" value="<?=$row["section_id"]?>" />
+                <input type="hidden" name="cid" value="1" />
                 <input type="hidden" name="saveType" value="Delete">
                 <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
               </form>
             </td>
-  </tr>
+          </tr>
 <?php
   }
 } else {
