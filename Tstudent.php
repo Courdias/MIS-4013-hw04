@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
     
-      <h1>student</h1>
+      <h1>Student</h1>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -80,7 +80,7 @@ if ($result->num_rows > 0) {
                       <form method="post" action="">
                         <div class="mb-3">
                           <label for="editStudent<?=$row["student_id"]?>Name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="editStudent<?=$row["student_id"]?>Name" aria-describedby="editStudent<?=$row["student_id"]?>Help" name="stName" value="<?=$row['student_name']?>">
+                          <input type="text" class="form-control" id="editStudent<?=$row["student_id"]?>Name" aria-describedby="editStudent<?=$row["student_id"]?>Help" name="sName" value="<?=$row['student_name']?>">
                           <div id="editStudent<?=$row["student_id"]?>Help" class="form-text">Enter the student's name.</div>
                         </div>
                         <input type="hidden" name="iid" value="<?=$row['student_id']?>">
@@ -129,7 +129,7 @@ $conn->close();
               <form method="post" action="">
                 <div class="mb-3">
                   <label for="studentName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="studentName" aria-describedby="stnameHelp" name="stName">
+                  <input type="text" class="form-control" id="studentName" aria-describedby="snameHelp" name="sName">
                   <div id="nameHelp" class="form-text">Enter the student's name.</div>
                 </div>
                 <input type="hidden" name="saveType" value="Add">
