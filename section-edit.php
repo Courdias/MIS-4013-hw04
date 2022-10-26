@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
 ?>
 </select>
   </div>
-  <input type="hidden" name="id" value="<?=$row['section_id']?>">
+  <input type="hidden" name="iid" value="<?=$row['section_id']?>">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <?php
