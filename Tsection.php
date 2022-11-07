@@ -107,11 +107,11 @@ $conn->close();
                   
                    <label for="description" class="form-label">Course Section</label>
                    <input type="text" class="form-control" id="csect" aria-describedby="courseHelp" name="csect">
-                   <div id="nameHelp" class="form-text">Enter the course section.</div>
+                   <div id="courseHelp" class="form-text">Enter the course section.</div>
                   
                    <label for="description" class="form-label">Instructor</label>
                    <input type="text" class="form-control" id="cins" aria-describedby="courseHelp" name="cins">
-                   <div id="nameHelp" class="form-text">Enter the course instructor.</div>
+                   <div id="courseHelp" class="form-text">Enter the course instructor.</div>
                   
                 </div>
                 <input type="hidden" name="saveType" value="Add">
