@@ -30,16 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Add':
       $sqlAdd = "insert into course (prefix, number, description) value (?,?,?)";
       $stmtAdd = $conn->prepare($sqlAdd);
-      $stmtAdd->bind_param("sis", $_POST['cpf'], $_POST['cnb'], $_POST['cdscr']);
+      $stmtAdd->bind_param("sis", $_POST['cpf'], $_POST['cnb'], $_POST['csect'], $_POST['cins']);
       $stmtAdd->execute();
-      echo '<div class="alert alert-success" role="alert">New course added.</div>';
+      echo '<div class="alert alert-success" role="alert">New Section added.</div>';
       break;
     case 'Delete':
       $sqlDelete = "delete from course where course_id=?";
       $stmtDelete = $conn->prepare($sqlDelete);
       $stmtDelete->bind_param("i", $_POST['cid']);
       $stmtDelete->execute();
-      echo '<div class="alert alert-success" role="alert">Course deleted.</div>';
+      echo '<div class="alert alert-success" role="alert">Section deleted.</div>';
       break;
   }
 }
@@ -107,7 +107,7 @@ $conn->close();
                   
                    <label for="description" class="form-label">Course Section</label>
                    <input type="text" class="form-control" id="csect" aria-describedby="courseHelp" name="csect">
-                   <div id="nameHelp" class="form-text">Enter the course description.</div>
+                   <div id="nameHelp" class="form-text">Enter the course section.</div>
                   
                    <label for="description" class="form-label">Instructor</label>
                    <input type="text" class="form-control" id="cins" aria-describedby="courseHelp" name="cins">
