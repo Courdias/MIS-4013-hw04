@@ -25,7 +25,24 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  switch ($_POST['saveType']) {
+    case 'Add':
+      $sqlAdd = "insert into student (student_name) value (?)";
+      $stmtAdd = $conn->prepare($sqlAdd);
+      $stmtAdd->bind_param("s", $_POST['sName']);
+      $stmtAdd->execute();
+      echo '<div class="alert alert-success" role="alert">New student added.</div>';
+      break;
+    case 'Delete':
+      $sqlDelete = "delete from student where student_id=?";
+      $stmtDelete = $conn->prepare($sqlDelete);
+      $stmtDelete->bind_param("i", $_POST['iid']);
+      $stmtDelete->execute();
+      echo '<div class="alert alert-success" role="alert">Student deleted.</div>';
+      break;
+  }
+}
 $sql = "select section_id, section_number, i.instructor_name, c.prefix, c.number from Section s join Instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id";
 $result = $conn->query($sql);
 
@@ -46,6 +63,14 @@ if ($result->num_rows > 0) {
       </form>
     </td>
   </tr>
+     <td>
+              <form method="post" action="">
+                <input type="hidden" name="id" value="<?=$row["student_id"]?>" />
+                <input type="hidden" name="saveType" value="Delete">
+                <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
+              </form>
+            </td>
+          </tr>
 <?php
   }
 } else {
