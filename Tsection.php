@@ -28,14 +28,14 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   switch ($_POST['saveType']) {
     case 'Add':
-      $sqlAdd = "insert into section (prefix, number, description, instructor) value (?,?,?,?)";
+      $sqlAdd = "insert into Section (prefix, number, description, instructor) value (?,?,?,?)";
       $stmtAdd = $conn->prepare($sqlAdd);
       $stmtAdd->bind_param("siis", $_POST['cpf'], $_POST['cnb'], $_POST['csect'], $_POST['cins']);
       $stmtAdd->execute();
       echo '<div class="alert alert-success" role="alert">New Section added.</div>';
       break;
     case 'Delete':
-      $sqlDelete = "delete from section where section_id=?";
+      $sqlDelete = "delete from Section where section_id=?";
       $stmtDelete = $conn->prepare($sqlDelete);
       $stmtDelete->bind_param("i", $_POST['id']);
       $stmtDelete->execute();
