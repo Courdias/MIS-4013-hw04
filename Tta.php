@@ -63,25 +63,25 @@ if ($result->num_rows > 0) {
 ?>
           
           <tr>
-            <td><?=$row["student_id"]?></td>
-            <td><?=$row["student_name"]?></td>
+            <td><?=$row["ta_id"]?></td>
+            <td><?=$row["ta_name"]?></td>
             <td>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editStudent<?=$row["student_id"]?>">
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editTA<?=$row["ta_id"]?>">
                 Edit
               </button>
-              <div class="modal fade" id="editStudent<?=$row["student_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editStudent<?=$row["student_id"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="editStudent<?=$row["ta_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editTA<?=$row["ta_id"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editStudent<?=$row["student_id"]?>Label">Edit Teacher Assisant</h1>
+                      <h1 class="modal-title fs-5" id="editTA<?=$row["ta_id"]?>Label">Edit Teacher Assisant</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editStudent<?=$row["ta_id"]?>Name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="editStudent<?=$row["ta_id"]?>Name" aria-describedby="editTA<?=$row["ta_id"]?>Help" name="sName" value="<?=$row['ta_name']?>">
-                          <div id="editStudent<?=$row["ta_id"]?>Help" class="form-text">Enter the Teacher Assistant's name.</div>
+                          <label for="editTA<?=$row["ta_id"]?>Name" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="editTA<?=$row["ta_id"]?>Name" aria-describedby="editTA<?=$row["ta_id"]?>Help" name="sName" value="<?=$row['ta_name']?>">
+                          <div id="editTA<?=$row["ta_id"]?>Help" class="form-text">Enter the Teacher Assistant's name.</div>
                         </div>
                         <input type="hidden" name="iid" value="<?=$row['ta_id']?>">
                         <input type="hidden" name="saveType" value="Edit">
