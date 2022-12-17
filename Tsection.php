@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Add':
       $sqlAdd = "insert into course (prefix, number, description) value (?,?,?)";
       $stmtAdd = $conn->prepare($sqlAdd);
-      $stmtAdd->bind_param("siis", $_POST['cpf'], $_POST['cnb'], $_POST['csect'], $_POST['cins']);
+      $stmtAdd->bind_param("sis", $_POST['cpf'], $_POST['cnb'], $_POST['csect'], $_POST['cins']);
       $stmtAdd->execute();
       echo '<div class="alert alert-success" role="alert">New Section added.</div>';
       break;
