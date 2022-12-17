@@ -21,21 +21,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmtAdd = $conn->prepare($sqlAdd);
       $stmtAdd->bind_param("s", $_POST['sName']);
       $stmtAdd->execute();
-      echo '<div class="alert alert-success" role="alert">New student added.</div>';
+      echo '<div class="alert alert-success" role="alert">New Teacher Assistant added.</div>';
       break;
     case 'Edit':
       $sqlEdit = "update ta set ta_name=? where ta_id=?";
       $stmtEdit = $conn->prepare($sqlEdit);
       $stmtEdit->bind_param("si", $_POST['sName'], $_POST['iid']);
       $stmtEdit->execute();
-      echo '<div class="alert alert-success" role="alert">Student edited.</div>';
+      echo '<div class="alert alert-success" role="alert">Teacher Assistant edited.</div>';
       break;
     case 'Delete':
       $sqlDelete = "delete from ta where ta_id=?";
       $stmtDelete = $conn->prepare($sqlDelete);
       $stmtDelete->bind_param("i", $_POST['iid']);
       $stmtDelete->execute();
-      echo '<div class="alert alert-success" role="alert">Student deleted.</div>';
+      echo '<div class="alert alert-success" role="alert">Teacher Assistant deleted.</div>';
       break;
   }
 }
@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
               <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editTA<?=$row["ta_id"]?>">
                 Edit
               </button>
-              <div class="modal fade" id="editStudent<?=$row["ta_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editTA<?=$row["ta_id"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="editTA<?=$row["ta_id"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editTA<?=$row["ta_id"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
