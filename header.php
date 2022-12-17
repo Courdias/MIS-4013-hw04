@@ -30,6 +30,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Tstudent.php">Students</a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Tta.php">Teacher Assistants</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Non-Relevant Dropdown
