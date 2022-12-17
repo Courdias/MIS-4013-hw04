@@ -28,7 +28,7 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   switch ($_POST['saveType']) {
     case 'Add':
-      $sqlAdd = "insert into section (prefix, number, description, instructor_name) value (?,?,?,?)";
+      $sqlAdd = "insert into section (prefix, number, description, instructor) value (?,?,?,?)";
       $stmtAdd = $conn->prepare($sqlAdd);
       $stmtAdd->bind_param("siis", $_POST['cpf'], $_POST['cnb'], $_POST['csect'], $_POST['cins']);
       $stmtAdd->execute();
